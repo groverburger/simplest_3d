@@ -233,6 +233,8 @@ function love.load()
     Mesh = love.graphics.newMesh(vertexFormat, verts, "triangles")
     Mesh:setTexture(love.graphics.newImage("texture.png"))
     Timer = 0
+
+    -- initialize the projection and view matrices to simulate a camera
     Shader:send("projectionMatrix", GetProjectionMatrix(math.pi/2, 0.01, 1000, love.graphics.getWidth()/love.graphics.getHeight()))
     Shader:send("viewMatrix", GetViewMatrix({0,0,0}, {0,0,1}, {0,1,0}))
 end
